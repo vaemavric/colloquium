@@ -1,0 +1,162 @@
+\documentclass[english,8pt,a4paper]{report} %a poster document class, [draft] for A4 preview
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{amssymb} 
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{fix-cm}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\hyphenpenalty=10000
+\usepackage{ifthen}
+\usepackage[english]{babel}
+\usepackage[usenames,dvipsnames]{color}
+
+\usepackage{setspace}
+\usepackage[margin=1cm]{geometry}
+\usepackage[letterspace=150]{microtype}
+
+\definecolor{uclpurple}{RGB}{152,113,209}
+\addtolength{\topmargin}{-0.5cm}
+
+% % % % % % % % % % % % % % % % % % % % % % %
+
+%		M O D I F Y     H E R E
+
+% % % % % % % % % % % % % % % % % % % % % % %
+
+% - Change the respective entries to suit the talk
+
+% - If the talk doesn't have a 2nd title leave it empty, i.e. \newcommand{\thesndtitle}{}
+
+% - The picture needs to be in the same folder as the .tex file, change scale factor to suit the size of the image and to keep stuff on the same page
+
+\newcommand{\thetitle}{Generalised Functions}
+\newcommand{\thesndtitle}{}
+\newcommand{\theimage}{\includegraphics[scale=0.6]{ruoyo.png}}
+\newcommand{\theabstract}{
+\begin{center} \large
+\emph{Abstract:}  Discipline from introductory analysis courses instruct young students that
+the function is differentiable with derivative zero everywhere other than the
+jump point of discontinuity: the left limit is obviously strictly less than the
+right limit. So the function is of derivative 0 on the whole domain except just
+one point, can we say the derivative exists on the whole domain, in somewhat
+sense? Also recall from the same course that if one alter only one point
+the Riemann integral of the function does not alter. So if we integrate this . . .
+
+
+The talk is a beginner(-maybe)-friendly sightseeing introduction to some
+interesting ideas in modern analysis.\\ In the first part I will cover the basics
+from the theory of distributions: \\*
+i) test functions;
+ii) distributions; 
+iii) differential operator on $\mathcal{D}^\prime$;\\*
+iv) distributions with compact support; 
+v) convolution on $\mathcal{D}^\prime$; \\*
+vi) Fourier transform on $\mathcal{D}^\prime$;
+vii) Schwartz space; 
+viii) tempered distributions.\\
+In the second part I will talk about applications of the theory:\\*
+ix) ODEs with jump singularities; 
+x) Poisson equation on & $\mathbb{R}$$^{n}$;\\*
+xi) MalgrangeEhrenpreis theorem;
+ xii) H¨ormander-Lojasiewicz theorem.
+
+\end{center}
+}
+\newcommand{\thespeaker}{Ruoyu Wang} 
+\newcommand{\theschool}{Cambridge University (formerly UCL)}
+\newcommand{\thedate}{6^{th}  October 2016}
+\newcommand{\theroom}{5pm - Drayton House B03 Ricardo LT}
+
+% % % % % % % % % % % % % % % % % % % % % % %
+
+%		D O     N O T     M O D I F Y 
+
+% % % % % % % % % % % % % % % % % % % % % % %
+
+\newcommand{\uclheader}{%
+\begin{flushleft}
+
+	\begin{tabular}{>{\raggedright}m{0.25\textwidth} >{\centering}m{0.75\textwidth}}
+		\vskip 3.2cm
+		\includegraphics[width=0.05\textwidth]{colloquium_logo.jpg} &
+		\vskip 0.35cm
+		\begin{flushleft}
+		\begin{spacing}{2}
+		 \textbf{\LARGE  UCL Undergraduate Mathematics Colloquium} \newline
+		 {\large \texttt{http://uclmaths.org} \newline Facebook: "\textsl{UCL Undergraduate Maths Colloquium}"} \\
+		 \end{spacing}
+		 \end{flushleft}
+	\end{tabular}
+\end{flushleft}
+
+   	
+}
+\newcommand{\trumpstars}{\begin{center}
+{\fontsize{40}{30} 
+	\leaders\vrule width \textwidth\vskip0.4pt
+	\vskip 0.2cm
+	\bigstar	
+	\hskip 1.5cm
+	\bigstar
+	\hskip 1.5cm
+	\bigstar
+	\hskip 1.5cm
+	\bigstar
+	\hskip 1.5cm
+	\bigstar
+	\vskip 0.3cm
+	\leaders\vrule width \textwidth\vskip0.4pt
+	\vskip 0.3cm
+	
+	}}
+
+\newcommand{\posterdate}{\begin{center}\thedate\end{center}}
+
+\newcommand{\postertitle}{%
+		\begin{center}
+			%\vskip 0.6cm			
+			\begin{spacing}{2}
+			\textbf{\fontsize{30}{40}\selectfont \textcolor{Maroon}{\thetitle}}
+			\ifthenelse{\equal{\thesndtitle}{}}{}{	
+				{\\ \Large \thesndtitle}
+				%\vskip 0.2cm
+			}
+			\end{spacing}
+			%\vskip 0.5cm			
+			\textbf{\Huge \textcolor{black}{\thedate}}
+			%\vskip 0.5cm			
+		\end{center}
+}
+\newcommand{\posterabstract}{%
+	\begin{center}
+		\parbox[c]{0.75\textwidth}{
+			\begin{spacing}{1.2}
+				\theabstract
+			\end{spacing}
+		}
+		\vskip 3cm
+		\hskip -14.75cm
+		\theimage
+		\vskip 0.5cm		
+        \begin{spacing}{1.5}
+		\begin{tabular}{ll}
+			{\LARGE Speaker:} & \LARGE \textbf{\thespeaker} \\
+            & \large \theschool %\\
+%			\noalign{\smallskip} & {\Large }
+		\end{tabular}
+        \end{spacing}
+		%\vskip 0.2cm
+		{\LARGE \theroom}
+	\end{center}
+}
+
+\begin{document}
+	\pagestyle{empty}
+	\uclheader
+	\trumpstars
+	\postertitle
+	\posterabstract	
+\end{document}
